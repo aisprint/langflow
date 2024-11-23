@@ -9,8 +9,6 @@ services:
     plan: standard
     healthCheckPath: /health_check
     autoDeploy: true
-    build:
-      command: pip install -r requirements.txt
     envVars:
       - key: LANGFLOW_DATABASE_URL
         value: sqlite:////app/data/.cache/langflow/langflow.db
