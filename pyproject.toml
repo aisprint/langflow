@@ -102,6 +102,7 @@ pytypes="1.0b10"
 psycopg2-binary="2.9.9"
 psycopg2="2.9.10"
 PyJWT="2.10.1"
+psycopg="3.2.3"
 
 [tool.poetry.extras]
 inference = ["huggingface-hub"]
