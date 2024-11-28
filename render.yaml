@@ -11,7 +11,7 @@ services:
     autoDeploy: true
     envVars:
       - key: LANGFLOW_DATABASE_URL
-        value: postgresql://langflow_debv_user:0Ir3oeseO6xBPDvcmB4BBOnhWyB02fPH@dpg-ct3vc8rtq21c738vg5fg-a/langflow_debv
+        value: postgresql://langflow_debv_user:0Ir3oeseO6xBPDvcmB4BBOnhWyB02fPH@dpg-ct3vc8rtq21c738vg5fg-a:5432/langflow_debv
       - key: LANGFLOW_HOST
         value: 0.0.0.0
       - key: LANGFLOW_PORT
