@@ -101,6 +101,7 @@ mem0ai = ">=0.1.26,<1.0.0"
 pytypes="1.0b10"
 psycopg2-binary="2.9.9"
 psycopg2="2.9.10"
+pyjwt="2.10.1"
 
 [tool.poetry.extras]
 inference = ["huggingface-hub"]
