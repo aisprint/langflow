@@ -1,27 +1,21 @@
-# ベースイメージ (Python公式イメージを使用)
-FROM python:3.11-slim
-
-# 必要な環境変数を設定
-ENV PYTHONUNBUFFERED=1 \
-    DEBIAN_FRONTEND=noninteractive
-
-# # 必要なシステムパッケージをインストール
-# RUN apt-get update && apt-get install -y --no-install-recommends \
-#     build-essential \
-#     libpq-dev \
-#     && apt-get clean \
-#     && rm -rf /var/lib/apt/lists/*
-
-# RUN apt-get install -y libc6
+FROM python:3.10-slim
 
 # 作業ディレクトリを作成
 WORKDIR /app
+
+# 必要なシステムパッケージをインストール
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# pipを最新バージョンに更新
+RUN pip install --upgrade pip
 
 # Pythonの依存関係ファイルをコピー
 COPY requirements.txt /app/
 
 # Python依存パッケージをインストール
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # アプリケーションコードをコピー
 COPY . /app/
