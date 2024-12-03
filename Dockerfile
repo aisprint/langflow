@@ -1,5 +1,5 @@
 # ベースイメージ (Python公式イメージを使用)
-FROM python:3.10-slim
+FROM ubuntu:latest
 
 # 必要な環境変数を設定
 ENV PYTHONUNBUFFERED=1 \
@@ -23,9 +23,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # アプリケーションコードをコピー
 COPY . /app/
-
-# Expose Port for Railway
-EXPOSE 8080
 
 # Startコマンドを指定
 CMD ["python", "-m", "langflow", "run", "--host", "0.0.0.0"]
