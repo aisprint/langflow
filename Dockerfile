@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y libc6
+
 # 作業ディレクトリを作成
 WORKDIR /app
 
