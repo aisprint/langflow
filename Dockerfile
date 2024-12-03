@@ -5,14 +5,14 @@ FROM ubuntu:latest
 ENV PYTHONUNBUFFERED=1 \
     DEBIAN_FRONTEND=noninteractive
 
-# 必要なシステムパッケージをインストール
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# # 必要なシステムパッケージをインストール
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     build-essential \
+#     libpq-dev \
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y libc6
+# RUN apt-get install -y libc6
 
 # 作業ディレクトリを作成
 WORKDIR /app
