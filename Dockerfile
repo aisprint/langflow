@@ -1,5 +1,5 @@
 # ベースイメージ (Python公式イメージを使用)
-FROM ubuntu:latest
+FROM python:3.9-slim
 
 # 必要な環境変数を設定
 ENV PYTHONUNBUFFERED=1 \
