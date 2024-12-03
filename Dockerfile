@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
 # pipを最新バージョンに更新
 RUN pip install --upgrade pip
 
+RUN pip install slack-sdk
+
 # Pythonの依存関係ファイルをコピー
 COPY requirements.txt /app/
 
