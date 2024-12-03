@@ -1,0 +1,29 @@
+# railway.yaml
+
+# プロジェクト名
+name: your_project_name
+
+# ビルドとデプロイの設定
+build:
+  # 使用するビルダーの指定
+  builder: "dockerfile" # Dockerfileを使用する場合
+
+  # ビルドフェーズで実行するコマンド
+  install:
+    - pip install -r requirements.txt
+    - pip install slack-sdk  # 追加のパッケージをインストール
+
+  # ビルドフェーズで実行するコマンド
+  commands:
+    - echo "Building the project..."
+
+# デプロイの設定
+deploy:
+  # デプロイフェーズで実行するコマンド
+  start:
+    - uvicorn main:app --host 0.0.0.0 --port $PORT
+
+# 環境変数の設定
+env:
+  - name: PORT
+    value: "8000"
