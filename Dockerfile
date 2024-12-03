@@ -17,6 +17,8 @@ COPY requirements.txt /app/
 # Python依存パッケージをインストール
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
+RUN pip install slack-sdk
+
 # アプリケーションコードをコピー
 COPY . /app/
 
