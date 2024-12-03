@@ -1,5 +1,5 @@
 # ベースイメージ (Python公式イメージを使用)
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 # 必要な環境変数を設定
 ENV PYTHONUNBUFFERED=1 \
