@@ -20,5 +20,7 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # アプリケーションコードをコピー
 COPY . /app/
 
+ENV DATABASE_URL=postgresql://postgres:bwLYoWwOThrxJGCLmQelHotljAgfaxIs@postgres.railway.internal:5432/railway
+
 # Startコマンドを指定
 CMD ["python", "-m", "langflow", "run", "--host", "0.0.0.0"]
